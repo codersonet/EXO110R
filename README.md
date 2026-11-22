@@ -3,7 +3,7 @@
 A small, beginner-friendly, Keras-based exoplanet **candidate ranker**, inspired by Google's AstroNet
 ([Shallue & Vanderburg, arXiv:1712.05044](https://arxiv.org/abs/1712.05044)).
 
-When a planet passes in front of its star, the star dims by a tiny fraction. EXO110F trains a small 1D CNN on
+When a planet passes in front of its star, the star dims by a tiny fraction. EXO110R trains a small 1D CNN on
 Kepler brightness records (the Kaggle *Kepler Labelled Time Series* data) to score how planet-like each star's record
 looks, and then ranks the stars by that score. AstroNet's authors used a deep-learning model of this kind to help find
 Kepler-90i, the eighth planet of its system. **This project does not find new planets**, and it is a much simpler model
@@ -163,7 +163,7 @@ matrix and the top-ranked stars (see **Run summary** above).
 ## 6. How data is stored
 
 ```text
-EXO110F/
+EXO110R/
   data/                         # gitignored: never commit raw or large data
     raw/        exoTrain.csv, exoTest.csv
     processed/  dataset_v1.npz   # all arrays, labels and the split indices
@@ -293,6 +293,9 @@ NASA Exoplanet Archive, fold each signal, build global and local views, and use 
 - [Kaggle: Kepler Labelled Time Series Data](https://www.kaggle.com/datasets/keplersmachines/kepler-labelled-time-series-data)
 
 **Not used in this version:** Lightkurve, Jupyter, the NASA Exoplanet Archive tables and the MAST archive.
+```
+why? Because we have used direct csv data from kaggle, which reduced our burden to manually sort the data from MAST or NASA Archive.
+```
 
 **Reference material**
 - Shallue & Vanderburg, *Identifying Exoplanets with Deep Learning* (arXiv:1712.05044)
